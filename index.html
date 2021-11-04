@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>JavaScript Loan Calculator</title>
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
+
+
+<body>
+    <!--  This is an HTML Table with <input> elements that allow the user to enter data
+        and <span> elements in which the program can display its results.  These elements
+        have "ids" like "interest" and "years".  These "ids" are used in the JavaScript code that
+        follows the table.  Note that some of the input elments define "onchange" or "onclick" event
+        handlers.  These specify strings of JavaScript code to be executed when the ser enters data or clicks. 
+     -->
+     <table>
+        <tr><th>Enter Loan Data:</th>
+            <td></td>
+            <th>Loan Balance, Cumulative Equity, and Interest Payments</th></tr>
+        <tr><td>Amount of the Loan ($):</td>
+            <td><input id="amount" onchange="calculate();"></td>
+            <td rowspan=8>
+                <canvas id="graph" width="400" height="250"></canvas></td></tr>
+        <tr><td>Annual interest (%):</td>
+            <td><input id="apr" onchange="calculate();"></td></tr>
+        <tr><td>Repayment period (years):</td>
+            <td><input id="years" onchange="calculate();"></td></tr>
+        <tr><td>Zipcode (to find lenders):</td>
+            <td><input id="zipcode" onchange="calculate()";></td></tr>
+        <tr><th>Approximate Payments:</th>
+            <td><button onclick="calculate();">Calculate</button></td></tr>
+        <tr><td>Monthly payment:</td>
+            <td>$<span class="output" id="payment"></span></td></tr>
+        <tr><td>Total Payment:</td>
+            <td>$<span class="output" id="total"></span></td></tr>
+        <tr><td>Total Insterest:</td>
+            <td>$<span class="output" id="totalinsterest"></span></td></tr>
+        <tr><th>Sponsors:</th><td colspan=2>
+            Apply for your loan with one of these fine lenders:
+            <div id="lenders"></div></td></tr>
+     </table>
+     
+     <script src="./assets/js/script.js"></script>
+</body>
+</html>
